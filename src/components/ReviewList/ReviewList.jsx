@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Loader = () => {
+const ReviewList = () => {
     return (
         <div>
-            Loader
+            ReviewList
         </div>
     );
 };
 
-export default Loader;
+export default ReviewList;

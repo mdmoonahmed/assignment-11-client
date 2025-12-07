@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Loader = () => {
+const Register = () => {
     return (
         <div>
-            Loader
+            Register
         </div>
     );
 };
 
-export default Loader;
+export default Register;

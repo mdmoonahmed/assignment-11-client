@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Loader = () => {
+const CreateMeal = () => {
     return (
         <div>
-            Loader
+            CreateMeal
         </div>
     );
 };
 
-export default Loader;
+export default CreateMeal;

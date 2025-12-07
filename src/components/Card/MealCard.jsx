@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Loader = () => {
+const MealCard = () => {
     return (
         <div>
-            Loader
+            MealCard
         </div>
     );
 };
 
-export default Loader;
+export default MealCard;
