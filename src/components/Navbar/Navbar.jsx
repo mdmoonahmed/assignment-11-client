@@ -45,9 +45,9 @@ const Navbar = () => {
 
                 {/* CTA Button */}
                 <div className="navbar-end">
-                    <button className="b-g-accent text-black font-bold rounded-md px-4 py-2 hover:brightness-105 transition">
+                    <Link to='/login' className="b-g-accent text-black font-bold rounded-md px-4 py-2 hover:brightness-105 transition">
                        Login
-                    </button>
+                    </Link>
                 </div>
             </div>
         </div>
