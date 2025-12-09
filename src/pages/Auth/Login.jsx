@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import useTitle from "../../Hooks/useTitles";
+import { toast } from "react-toastify";
 // import useAxiosSecure from "../../Hooks/useAxiosSecure"; //
 
 const Login = () => {
@@ -30,7 +31,6 @@ const Login = () => {
 
       // 1) login 
       await signInUser(email, password);
-
       // 2) optional: exchange token with backend if you use server JWT
       // const idToken = await getCurrentUserToken();
       // await axiosSecure.post('/api/auth/exchange', { idToken });
@@ -40,9 +40,13 @@ const Login = () => {
       navigate(dest, { replace: true });
     } catch (err) {
       const msg = err?.response?.data?.message || err?.message || "Login failed. Please check your credentials.";
+      toast.error(`${msg}`,{
+        theme:'dark'
+      })
       setServerError(msg);
     } finally {
       setLoading(false);
+      
     }
   };
 

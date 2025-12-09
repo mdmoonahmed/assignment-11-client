@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import useAxiosSecure from "../../Hooks/useAxiosSecure"; 
 import useTitle from "../../Hooks/useTitles";
+import { toast } from "react-toastify";
 
 const Register = () => {
   useTitle("Register | ChefHUt")
@@ -45,7 +46,7 @@ const Register = () => {
       };
 
       // 3) save user to  backend
-      const res = await axiosSecure.post("http://localhost:3000/users", userInfo);
+      const res = await axiosSecure.post("/users", userInfo);
 
       //  check server response
       if (res?.data?.insertedId || res?.data?.acknowledged) {
@@ -56,7 +57,9 @@ const Register = () => {
         };
 
         await updateUserProfile(userProfile.displayName,userProfile.photoURL);
-
+        toast.success('Account Created',{
+          theme: 'dark',
+        })
         // 5) navigate to previous location or home/dashboard
         const dest =
           (location.state && location.state.from) || "/dashboard";
@@ -68,6 +71,9 @@ const Register = () => {
       // Show user-friendly message
       const msg =
         err?.response?.data?.message || err?.message || "Registration failed. Try again.";
+          toast.error(`${msg}`,{
+          theme: 'dark',
+        })
       setServerError(msg);
     } finally {
       setLoading(false);

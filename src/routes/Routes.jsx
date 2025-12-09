@@ -31,7 +31,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/mealDetails/:id",
-        element: <MealDetails></MealDetails>,
+        element: <PrivateRoutes><MealDetails/></PrivateRoutes>,
       },
       {
         path: "/login",

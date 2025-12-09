@@ -53,7 +53,7 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="mt-12 border-t border-[#23232A] py-6 text-center">
         <p className="t-muted text-sm">
-          © {new Date().getFullYear()} LocalChefBazaar. All rights reserved.
+          © {new Date().getFullYear()} Moon Ahmed. All rights reserved.
         </p>
       </div>
 
