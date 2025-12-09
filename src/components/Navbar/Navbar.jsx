@@ -75,13 +75,13 @@ const Navbar = () => {
                 />
               </svg>
             </label>
-            <ul className="menu menu-sm dropdown-content bg-surface rounded-box z-50 mt-3 w-52 p-4 shadow-lg">
+            <ul className="menu menu-sm dropdown-content b-g-surface rounded-box z-50 mt-3 w-52 p-4 shadow-lg">
               {links}
             </ul>
           </div>
           <Link
             to={"/"}
-            className="header-text flex gap-1 items-center text-2xl md:text-3xl font-display t-accent normal-case"
+            className="header-text flex gap-1 items-center text-xl md:text-3xl font-display t-accent normal-case"
           >
             <img className="h-10" src={logo} alt="" /> Chef Hut
           </Link>

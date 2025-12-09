@@ -3,8 +3,10 @@ import Hero from "../../components/Hero/Hero";
 import MealCard from "../../components/Card/MealCard";
 import { useLoaderData } from "react-router-dom";
 import WhyChooseUs from "../../components/WhyChooseUs/WhyChooseUs";
+import useTitles from '../../Hooks/useTitles';
 
 const Home = () => {
+  useTitles("Home | ChefHut")
   const meals = useLoaderData();
   console.log(meals);
 

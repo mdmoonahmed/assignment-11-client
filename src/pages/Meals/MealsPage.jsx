@@ -4,12 +4,14 @@ import useAxios from "../../Hooks/useAxios";
 import MealCard from "../../components/Card/MealCard";
 import { FaArrowDown, FaArrowUp } from "react-icons/fa6";
 import { FaArrowAltCircleRight, FaFacebook } from "react-icons/fa";
+import useTitle from "../../Hooks/useTitles";
 
 const MealsPage = () => {
+  useTitle('Meals | ChefHut')
   const api = useAxios();
 
   const [currentPage, setCurrentPage] = useState(0);
-  const [sort, setSort] = useState("createdAt");
+  const [sort, setSort] = useState("price");
   const [order, setOrder] = useState("desc");
   const [search, setSearch] = useState("");
 
@@ -60,8 +62,8 @@ const MealsPage = () => {
              onChange={(e) => setSort(e.target.value)}
              className="b-g-surface b-subtle t-primary px-2 sm:px-4 py-2 rounded-md"
            >
-             <option value="createdAt">Newest</option>
              <option value="price">Price</option>
+             <option value="createdAt">Newest</option>
              <option value="rating">Rating</option>
            </select>
            

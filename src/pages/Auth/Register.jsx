@@ -3,8 +3,10 @@ import { useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import useAxiosSecure from "../../Hooks/useAxiosSecure"; 
+import useTitle from "../../Hooks/useTitles";
 
 const Register = () => {
+  useTitle("Register | ChefHUt")
   const {
     register,
     handleSubmit,

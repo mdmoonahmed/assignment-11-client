@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
+import useTitle from "../../Hooks/useTitles";
 // import useAxiosSecure from "../../Hooks/useAxiosSecure"; //
 
 const Login = () => {
+  useTitle("Login | ChefHut")
   const {
     register,
     handleSubmit,
@@ -112,7 +114,7 @@ const Login = () => {
 
         {/* Signup link */}
         <p className="t-muted text-sm text-center">
-          New to LocalChefBazaar?{" "}
+          New to Chef Hut?{" "}
           <a href="/register" className="t-accent hover:underline">Create an account</a>
         </p>
       </div>
