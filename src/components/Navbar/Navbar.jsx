@@ -43,7 +43,7 @@ const Navbar = () => {
         <li>
           <NavLink
             className="font-semibold"
-            to="/dashboard"
+            to="/dashboard/profile"
             style={getLinkStyle}
           >
             Dashboard

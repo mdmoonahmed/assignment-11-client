@@ -4,12 +4,13 @@ import { Link, NavLink, Outlet } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import useRole from "../Hooks/useRole";
 import logo from '../assets/logo.png';
-import { TbPackage, TbTruckDelivery } from "react-icons/tb";
+import { TbTruckDelivery } from "react-icons/tb";
 import { FaCommentDots, FaHeart, FaHistory } from "react-icons/fa";
 import { GiHotMeal, GiMeal } from "react-icons/gi";
 import { FaBellConcierge } from "react-icons/fa6";
-import { RiMoneyDollarCircleFill } from "react-icons/ri";
+import { RiGitPullRequestFill, RiMoneyDollarCircleFill } from "react-icons/ri";
 import { MdManageAccounts } from "react-icons/md";
+import { IoStatsChartSharp } from "react-icons/io5";
 
 /**
  * DashboardDrawer
@@ -187,7 +188,7 @@ const DashboardDrawer = () => {
           {/* nav */}
           <ul className="menu dashboard w-full t-primary grow px-1">
             {/* ===== COMMON ===== */}
-            <li>
+            {/* <li>
               <NavLink
                 to="/dashboard"
                
@@ -195,11 +196,11 @@ const DashboardDrawer = () => {
                 <IconHome />
                 <span className=" is-drawer-close:hidden">Overview</span>
               </NavLink>
-            </li>
+            </li> */}
 
             <li>
               <NavLink to="/dashboard/profile">
-                <IconUsers />
+                <IconUsers className=''/>
                 <span className=" is-drawer-close:hidden">My Profile</span>
               </NavLink>
             </li>
@@ -267,12 +268,12 @@ const DashboardDrawer = () => {
                   </NavLink>
                 </li>
 
-                <li>
+                {/* <li>
                   <NavLink to="/dashboard/earnings">
                     <RiMoneyDollarCircleFill className="text-green-500"/>
                     <span className=" is-drawer-close:hidden">Earnings</span>
                   </NavLink>
-                </li>
+                </li> */}
               </>
             )}
 
@@ -291,25 +292,18 @@ const DashboardDrawer = () => {
                 </li>
 
                 <li>
-                  <NavLink to="/dashboard/manage-meals">
-                    <GiMeal /> 
-                    <span className=" is-drawer-close:hidden">Manage Meals</span>
+                  <NavLink to="/dashboard/manage-request">
+                    <RiGitPullRequestFill />
+                    <span className=" is-drawer-close:hidden">Manage Request</span>
                   </NavLink>
                 </li>
 
                 <li>
-                  <NavLink to="/dashboard/manage-orders">
-                    <TbPackage />
+                  <NavLink to="/dashboard/statistic">
+                    <IoStatsChartSharp />
                     <span className=" is-drawer-close:hidden">
-                      Manage Orders
+                       Platform Statistic
                     </span>
-                  </NavLink>
-                </li>
-
-                <li>
-                  <NavLink to="/dashboard/site-reviews">
-                    ⭐
-                    <span className=" is-drawer-close:hidden">Site Reviews</span>
                   </NavLink>
                 </li>
               </>

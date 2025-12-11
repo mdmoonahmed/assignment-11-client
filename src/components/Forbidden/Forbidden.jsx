@@ -1,21 +1,16 @@
-import { Link, useRouteError } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AlertTriangle } from "lucide-react";
 
-const ErrorPage = () => {
-  const error = useRouteError();
+const Forbidden = () => {
 
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-[#0d0d0d] text-white px-4">
       <AlertTriangle size={70} className="text-red-500 mb-4" />
 
-      <h1 className="text-4xl font-bold mb-2">Oops! Something went wrong.</h1>
+      <h1 className="text-4xl font-bold mb-2">Forbidden Route.</h1>
 
       <p className="text-gray-400 mb-4">
-        {error?.statusText || error?.message || "An unexpected error has occurred."}
-      </p>
-
-      <p className="text-gray-500 text-sm mb-8">
-        Error Code: <span className="text-red-400 font-semibold">{error?.status || "N/A"}</span>
+         You are not allowed to access this page.
       </p>
 
       <Link
@@ -28,4 +23,4 @@ const ErrorPage = () => {
   );
 };
 
-export default ErrorPage;
+export default Forbidden;
