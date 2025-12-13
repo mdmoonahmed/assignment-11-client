@@ -218,25 +218,26 @@ const DashboardDrawer = () => {
                 <span className=" is-drawer-close:hidden">Favorites</span>
               </NavLink>
             </li>
+              <li>
+                  <NavLink to="/dashboard/reviews">
+                    <FaCommentDots/>
+                    <span className=" is-drawer-close:hidden">My Reviews</span>
+                  </NavLink>
+                </li>
 
             {/* ===== USER ===== */}
             {role === "user" && (
               <>
-                <li>
+                {/* <li>
                   <NavLink to="/dashboard/order-history">
                     <FaHistory />
                     <span className=" is-drawer-close:hidden">
                       Order History
                     </span>
                   </NavLink>
-                </li>
+                </li> */}
 
-                <li>
-                  <NavLink to="/dashboard/reviews">
-                    <FaCommentDots/>
-                    <span className=" is-drawer-close:hidden">My Reviews</span>
-                  </NavLink>
-                </li>
+              
               </>
             )}
 

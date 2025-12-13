@@ -30,6 +30,7 @@ const MyReviews = () => {
   const handleDelete = async (id) => {
     const result = await Swal.fire({
       title: "Delete review?",
+      theme:"dark",
       text: "This action cannot be undone.",
       icon: "warning",
       showCancelButton: true,
@@ -39,7 +40,7 @@ const MyReviews = () => {
 
     if (result.isConfirmed) {
       await axiosSecure.delete(`/reviews/${id}`);
-      Swal.fire("Deleted!", "Review removed successfully.", "success");
+      Swal.fire({ title:"Deleted!",theme:"dark", text:"Review removed successfully.", icon:"success"});
       refetch();
     }
   };
@@ -57,7 +58,7 @@ const MyReviews = () => {
       updatedReview
     );
 
-    Swal.fire("Updated!", "Review updated successfully.", "success");
+    Swal.fire({ title:"Updated",theme:"dark", text:"Review updated successfully.", icon:"success"});
     setEditingReview(null);
     refetch();
   };
@@ -101,7 +102,7 @@ const MyReviews = () => {
               <div className="flex justify-end gap-2 pt-3">
                 <button
                   onClick={() => setEditingReview(review)}
-                  className="px-3 py-1 rounded-md b-subtle t-primary hover:brightness-110"
+                  className="px-3 py-1 rounded-md b-subtle b-g-accent text-black hover:brightness-110"
                 >
                   Update
                 </button>
